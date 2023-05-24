@@ -28,7 +28,7 @@ public class TwitController {
     private final TwitService twitService;
 
     @PostMapping("/create")
-    public TwitResponseDto createMessage(@RequestBody TwitRequestDto dto,
+    public TwitResponseDto createTwit(@RequestBody TwitRequestDto dto,
                                          @RequestParam("file") MultipartFile file) {
         Twit twit = twitMapper.toModel(dto);
         try {
@@ -39,7 +39,7 @@ public class TwitController {
     }
 
     @GetMapping
-    public List<TwitResponseDto> getMessages() {
+    public List<TwitResponseDto> getTwits() {
         return twitService.findAll()
                 .stream()
                 .map(twitMapper::toDto)
@@ -47,7 +47,7 @@ public class TwitController {
     }
 
     @GetMapping("/user/{id}")
-    public List<TwitResponseDto> getUserMessages(@PathVariable Long id,
+    public List<TwitResponseDto> getUserTwits(@PathVariable Long id,
                             @RequestParam(value = "page", defaultValue = "0") int page,
                             @RequestParam(value = "size", defaultValue = "10") int size) {
         return twitService.findByUser_Id(id, page, size)
