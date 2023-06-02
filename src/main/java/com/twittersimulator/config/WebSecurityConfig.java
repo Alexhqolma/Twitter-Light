@@ -26,7 +26,8 @@ public class WebSecurityConfig {
         return http
                 .authorizeHttpRequests()
                 .requestMatchers("/",
-                        "/twits", "/users/registration", "/inject", "/users/authenticate").permitAll()
+                        "/twits", "/users/registration",
+                        "/inject", "/users/authenticate").permitAll()
                 .and()
                 .authorizeHttpRequests()
                 .requestMatchers("/users/**").authenticated()

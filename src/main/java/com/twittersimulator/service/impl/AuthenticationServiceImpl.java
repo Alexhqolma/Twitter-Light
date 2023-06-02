@@ -4,10 +4,10 @@ import com.twittersimulator.exception.TwitterUserException;
 import com.twittersimulator.model.User;
 import com.twittersimulator.service.AuthenticationService;
 import com.twittersimulator.service.UserService;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -22,6 +22,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (userAccount.isEmpty() || userAccount.get().getPassword().equals(encodedPassword)) {
             throw new TwitterUserException("Incorrect username or password!!!");
         }
-        return userAccount.orElseThrow(() -> new RuntimeException("Can't find user with username " + userName));
+        return userAccount
+                .orElseThrow(() ->
+                        new RuntimeException("Can't find user with username " + userName));
     }
 }

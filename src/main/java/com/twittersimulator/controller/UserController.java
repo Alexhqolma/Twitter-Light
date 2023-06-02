@@ -7,7 +7,6 @@ import com.twittersimulator.model.User;
 import com.twittersimulator.service.UserService;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,6 @@ public class UserController {
     public String registration() {
         return "Registration Page";
     }
-
 
     @PostMapping("/registration")
     public UserResponseDto registration(@RequestBody UserRequestDto userRequestDto) {

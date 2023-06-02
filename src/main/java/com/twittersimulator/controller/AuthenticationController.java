@@ -5,6 +5,8 @@ import com.twittersimulator.exception.TwitterUserException;
 import com.twittersimulator.model.User;
 import com.twittersimulator.security.jwt.JwtTokenProvider;
 import com.twittersimulator.service.AuthenticationService;
+import java.util.Map;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.validation.Valid;
-import java.util.Map;
 
 @RestController
 @AllArgsConstructor
