@@ -30,6 +30,7 @@ public class UserMapper {
         UserResponseDto userResponseDto = new UserResponseDto();
         userResponseDto.setId(user.getId());
         userResponseDto.setName(user.getName());
+        userResponseDto.setPassword(user.getPassword());
         userResponseDto.setTwitIds(user.getTwits()
                 .stream()
                 .map(Twit::getId)

@@ -7,6 +7,7 @@ import lombok.Data;
 public class UserResponseDto {
     private Long id;
     private String name;
+    private String password;
     private List<Long> twitIds;
     private String role;
 }
